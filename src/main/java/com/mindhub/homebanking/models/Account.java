@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "accounts")
@@ -21,6 +23,10 @@ public class Account {
 //    @JsonBackReference
     @JoinColumn(name = "client_id")
     private Client client;
+
+
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
+    private List<Transaction> transactions= new ArrayList<>();
 
     public Account() {
     }
@@ -68,5 +74,17 @@ public class Account {
         return id;
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
 
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public void addTransaction (Transaction transaction){
+
+        transaction.setTransaction(this);
+        transactions.add(transaction);
+    }
 }
