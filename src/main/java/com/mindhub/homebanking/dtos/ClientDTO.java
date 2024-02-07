@@ -2,6 +2,7 @@ package com.mindhub.homebanking.dtos;
 
 import com.mindhub.homebanking.models.Account;
 import com.mindhub.homebanking.models.Client;
+import com.mindhub.homebanking.models.ClientLoan;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class ClientDTO {
     private String email;
     private List<AccountsDTO> accounts;
 
+    private List<ClientLoanDTO> loans;
+
 
     public ClientDTO() {
     }
@@ -26,10 +29,15 @@ public class ClientDTO {
         this.lastName = client.getLastName();
         this.email = client.getEmail();
         this.accounts=accountsDTO(client.getAccounts());
+        this.loans=clientLoanDTO(client.getLoans());
+    }
+
+    private List<ClientLoanDTO> clientLoanDTO(List<ClientLoan> loans) {
+        return loans.stream().map(ClientLoanDTO::new).toList();
     }
 
     private List<AccountsDTO>accountsDTO(List<Account>accounts){
-        return accounts.stream().map(AccountsDTO::new).collect(Collectors.toList());
+        return accounts.stream().map(AccountsDTO::new).toList();
     }
 
     public long getId() {
@@ -51,4 +59,9 @@ public class ClientDTO {
     public List<AccountsDTO> getAccounts() {
         return accounts;
     }
+
+    public List<ClientLoanDTO> getLoans() {
+        return loans;
+    }
+
 }

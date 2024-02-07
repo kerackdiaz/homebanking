@@ -17,8 +17,11 @@ public class Client {
 
 
    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-//   @JsonManagedReference
-   private List<Account> accounts= new ArrayList<>();
+   private List<Account> accounts;
+
+   @OneToMany(mappedBy ="client", fetch=FetchType.EAGER )
+    private List<ClientLoan> loans;
+
     public Client() { }
 
 
@@ -27,6 +30,9 @@ public class Client {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public static void setLoan(Loan loan) {
     }
 
 
@@ -74,6 +80,21 @@ public class Client {
         accounts.add(account);
     }
 
+    public List<ClientLoan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<ClientLoan> loans) {
+        this.loans = loans;
+    }
+
+//    public void addLoan (ClientLoan loan){
+//        if ((loans == null)){
+//            loans = new ArrayList<>();
+//        }
+//        loan.setClient(this);
+//        loans.add(loan);
+//    }
 
 
     @Override
