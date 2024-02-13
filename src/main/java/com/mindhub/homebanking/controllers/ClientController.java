@@ -18,16 +18,18 @@ import java.util.List;
 public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
+
     @GetMapping("/")
-    public ResponseEntity<List<ClientDTO>> getAllClients(){
-        List<Client> clients= clientRepository.findAll();
+    public ResponseEntity<List<ClientDTO>> getAllClients() {
+        List<Client> clients = clientRepository.findAll();
         return new ResponseEntity<>(clients.stream().map(ClientDTO::new).collect(java.util.stream.Collectors.toList()), HttpStatus.OK);
 
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<ClientDTO> getClientById(@PathVariable Long id){
+    public ResponseEntity<ClientDTO> getClientById(@PathVariable Long id) {
         Client client = clientRepository.findById(id).orElse(null);
-        if(client == null){
+        if (client == null) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
         ClientDTO clientDTO = new ClientDTO(client);

@@ -1,42 +1,51 @@
 package com.mindhub.homebanking.dtos;
 
-import com.mindhub.homebanking.models.Account;
-import com.mindhub.homebanking.models.Client;
-import com.mindhub.homebanking.models.ClientLoan;
+import com.mindhub.homebanking.models.*;
 import jakarta.persistence.*;
-
+import com.mindhub.homebanking.models.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 public class ClientDTO {
-    private  long id;
+    private long id;
     private String firstName;
     private String lastName;
     private String email;
     private List<AccountsDTO> accounts;
 
+    private List<TransactionDTO> transactions;
+
     private List<ClientLoanDTO> loans;
 
+    private List<CardDTO> Card;
 
-    public ClientDTO() {
-    }
 
     public ClientDTO(Client client) {
         this.id = client.getId();
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
-        this.accounts=accountsDTO(client.getAccounts());
-        this.loans=clientLoanDTO(client.getLoans());
+        this.accounts = accountsDTO(client.getAccounts());
+        this.transactions= transactionDTOS(client.getTransactions());
+        this.loans = clientLoanDTO(client.getLoans());
+        this.Card = cardDTO(client.getCard());
+    }
+
+    private List<CardDTO> cardDTO(List<Card> cards) {
+        return cards.stream().map(CardDTO::new).toList();
     }
 
     private List<ClientLoanDTO> clientLoanDTO(List<ClientLoan> loans) {
         return loans.stream().map(ClientLoanDTO::new).toList();
     }
 
-    private List<AccountsDTO>accountsDTO(List<Account>accounts){
+    private List<TransactionDTO> transactionDTOS(List<Transaction> transactions){
+        return transactions.stream().map(TransactionDTO::new).toList();
+    }
+
+    private List<AccountsDTO> accountsDTO(List<Account> accounts) {
         return accounts.stream().map(AccountsDTO::new).toList();
     }
 
@@ -60,8 +69,15 @@ public class ClientDTO {
         return accounts;
     }
 
+    public List<TransactionDTO> getTransactions() {
+        return transactions;
+    }
+
     public List<ClientLoanDTO> getLoans() {
         return loans;
     }
 
+    public List<CardDTO> getCard() {
+        return Card;
+    }
 }

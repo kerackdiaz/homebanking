@@ -1,6 +1,7 @@
 package com.mindhub.homebanking.models;
 
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,17 +9,18 @@ import java.util.List;
 public class Loan {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private double maxAmount;
 
     @ElementCollection
-    @Column(name="payments")
+    @Column(name = "payments")
     private List<Integer> payments;
 
-    @OneToMany(mappedBy ="loan", fetch=FetchType.EAGER )
+    @OneToMany(mappedBy = "loan", fetch = FetchType.EAGER)
     private List<ClientLoan> clientLoans;
+
     public Loan() {
     }
 
@@ -70,15 +72,9 @@ public class Loan {
     public void add(Loan loan) {
     }
 
-//    public void addClientLoan(ClientLoan clientLoan) {
-//        clientLoan.setLoan(this);
-//        this.clientLoans.add(clientLoan);
-//    }
-
-
 
     @Embeddable
-    public class Payment{
+    public class Payment {
         private double maximunAmount;
         private int installments;
     }

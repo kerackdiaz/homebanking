@@ -26,7 +26,7 @@ public class Account {
 
 
     @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
-    private List<Transaction> transactions= new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
     public Account() {
     }
@@ -82,9 +82,12 @@ public class Account {
         this.transactions = transactions;
     }
 
-    public void addTransaction (Transaction transaction){
+    public void addTransaction(Transaction transaction) {
 
         transaction.setTransaction(this);
         transactions.add(transaction);
+
     }
+
+
 }

@@ -1,7 +1,7 @@
 package com.mindhub.homebanking.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,21 +9,27 @@ import java.util.List;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  long id;
-   private String firstName;
+    private long id;
+    private String firstName;
     private String lastName;
 
     private String email;
 
 
-   @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
-   private List<Account> accounts;
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Account> accounts;
 
-   @OneToMany(mappedBy ="client", fetch=FetchType.EAGER )
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Transaction> transactions;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<ClientLoan> loans;
 
-    public Client() { }
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Card> card;
 
+    public Client() {
+    }
 
 
     public Client(String firstName, String lastName, String email) {
@@ -72,12 +78,20 @@ public class Client {
         this.accounts = accounts;
     }
 
-    public void addAccount (Account account){
-        if ((accounts == null)){
+    public void addAccount(Account account) {
+        if ((accounts == null)) {
             accounts = new ArrayList<>();
         }
         account.setClient(this);
         accounts.add(account);
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public List<ClientLoan> getLoans() {
@@ -88,24 +102,17 @@ public class Client {
         this.loans = loans;
     }
 
-//    public void addLoan (ClientLoan loan){
-//        if ((loans == null)){
-//            loans = new ArrayList<>();
-//        }
-//        loan.setClient(this);
-//        loans.add(loan);
-//    }
+    public List<Card> getCard() {
+        return card;
+    }
 
+    public void setCard(List<Card> card) {
+        this.card = card;
+    }
 
     @Override
     public String toString() {
-        return
-         "Client{" +
-                "id= " + id +
-                ", Name= " + firstName + ' ' + lastName + "\n" +
-                ", email='" + email + "\n" +
-                ", Accounts= "+ accounts+
-                '}';
+        return "Client{" + "id= " + id + ", Name= " + firstName + ' ' + lastName + "\n" + ", email='" + email + "\n" + ", Accounts= " + accounts + '}';
     }
 }
 

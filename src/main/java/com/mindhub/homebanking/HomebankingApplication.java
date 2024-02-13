@@ -1,13 +1,7 @@
 package com.mindhub.homebanking;
 
-import com.mindhub.homebanking.models.Account;
-import com.mindhub.homebanking.models.Client;
-import com.mindhub.homebanking.models.ClientLoan;
-import com.mindhub.homebanking.models.Loan;
-import com.mindhub.homebanking.repositories.AccountRepository;
-import com.mindhub.homebanking.repositories.ClientLoanRepository;
-import com.mindhub.homebanking.repositories.ClientRepository;
-import com.mindhub.homebanking.repositories.LoanRepository;
+import com.mindhub.homebanking.models.*;
+import com.mindhub.homebanking.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,12 +12,13 @@ import java.util.List;
 
 @SpringBootApplication
 public class HomebankingApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(HomebankingApplication.class, args);
 	}
 
 	@Bean
-	public CommandLineRunner initData(ClientRepository clientRepository, AccountRepository accountRepository, LoanRepository loanRepository, ClientLoanRepository clientLoanRepository){
+	public CommandLineRunner initData(ClientRepository clientRepository, AccountRepository accountRepository, LoanRepository loanRepository, ClientLoanRepository clientLoanRepository, CardRepository cardRepository){
 		return  args -> {
 			Client Melba = new Client("Melba", "Morel", "melba@mindhub.com");
 			Account melba1 = new Account("123456", LocalDate.now(), 5000.00);
@@ -35,8 +30,14 @@ public class HomebankingApplication {
 
 			ClientLoan mortgage1 = new ClientLoan(400000,60 );
 			ClientLoan personal1 = new ClientLoan(50000,12 );
+			Card melbaCard1 = new Card(CardType.DEBIT, CardColor.GOLD, 3325674578764445L, 990, LocalDate.now(), LocalDate.now().plusYears(5));
 
 
+
+
+
+			melbaCard1.setClient(Melba);
+			melbaCard1.setCardHolder(Melba);
 			Melba.addAccount(melba1);
 			Melba.addAccount(melba2);
 			mortgage1.setClient(Melba);
@@ -51,8 +52,10 @@ public class HomebankingApplication {
 			loanRepository.save(automotive);
 			clientLoanRepository.save(mortgage1);
 			clientLoanRepository.save(personal1);
+			cardRepository.save(melbaCard1);
 			System.out.println(Melba);
 		};
 	}
+
 
 }

@@ -9,21 +9,21 @@ public class ClientLoan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private  double Amount;
-    private  double Payments;
+    private double Amount;
+    private double Payments;
 
     @ManyToOne
-    @JoinColumn(name="client_id")
+    @JoinColumn(name = "client_id")
     private Client client;
     @ManyToOne
-    @JoinColumn(name="loan_id")
+    @JoinColumn(name = "loan_id")
     private Loan loan;
 
 
     public ClientLoan() {
     }
 
-    public ClientLoan( double amount, double payments) {
+    public ClientLoan(double amount, double payments) {
         Amount = amount;
         Payments = payments;
     }

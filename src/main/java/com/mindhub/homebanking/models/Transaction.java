@@ -1,5 +1,7 @@
 package com.mindhub.homebanking.models;
+
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,6 +15,9 @@ public class Transaction {
     private double amount;
 
     @ManyToOne
+    @JoinColumn(name = "Client_id")
+    private Client client;
+    @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
 
@@ -20,7 +25,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction( TransactionType type, String description, LocalDateTime dateTime, double amount) {
+    public Transaction(TransactionType type, String description, LocalDateTime dateTime, double amount) {
         this.type = type;
         this.description = description;
         this.dateTime = dateTime;

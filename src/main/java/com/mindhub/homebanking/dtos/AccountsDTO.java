@@ -24,9 +24,10 @@ public class AccountsDTO {
         this.balance = account.getBalance();
     }
 
-    private List<TransactionDTO> accountsDTO(List<Transaction>transactions){
+    private List<TransactionDTO> accountsDTO(List<Transaction> transactions) {
         return transactions.stream().map(TransactionDTO::new).toList();
     }
+
     public long getId() {
         return id;
     }

@@ -6,8 +6,8 @@ public class ClientLoanDTO {
     private long id;
     private long loanId;
     private String loanName;
-    private  double Amount;
-    private  double Payments;
+    private double Amount;
+    private double Payments;
 
     public ClientLoanDTO(ClientLoan clientLoan) {
         this.id = clientLoan.getId();
@@ -18,7 +18,9 @@ public class ClientLoanDTO {
     }
 
 
-    public long getId() {return id;}
+    public long getId() {
+        return id;
+    }
 
     public long getLoanId() {
         return loanId;
