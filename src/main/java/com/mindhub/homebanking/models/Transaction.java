@@ -69,6 +69,22 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     public void setTransaction(Account account) {
     }
 }

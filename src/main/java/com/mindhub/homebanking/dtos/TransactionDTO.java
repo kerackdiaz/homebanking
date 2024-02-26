@@ -4,9 +4,11 @@ import com.mindhub.homebanking.models.Transaction;
 import com.mindhub.homebanking.models.TransactionType;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TransactionDTO {
     private long id;
+    private long accountId;
     private TransactionType type;
     private String description;
     private LocalDateTime dateTime;
@@ -15,6 +17,7 @@ public class TransactionDTO {
 
     public TransactionDTO(Transaction transaction) {
         this.id = transaction.getId();
+        this.accountId = transaction.getAccount().getId();
         this.type = transaction.getType();
         this.description = transaction.getDescription();
         this.dateTime = transaction.getDateTime();
@@ -26,6 +29,10 @@ public class TransactionDTO {
         return id;
     }
 
+    public long getAccountId() {
+        return accountId;
+    }
+
     public TransactionType getType() {
         return type;
     }
@@ -34,8 +41,12 @@ public class TransactionDTO {
         return description;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public String getDateTime() {
+        if (dateTime != null) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            return dateTime.format(formatter);
+        }
+        return "";
     }
 
     public double getAmount() {

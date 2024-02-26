@@ -15,6 +15,8 @@ public class Client {
 
     private String email;
 
+    private String password;
+
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<Account> accounts;
@@ -32,10 +34,11 @@ public class Client {
     }
 
 
-    public Client(String firstName, String lastName, String email) {
+    public Client(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
     }
 
     public static void setLoan(Loan loan) {
@@ -108,6 +111,14 @@ public class Client {
 
     public void setCard(List<Card> card) {
         this.card = card;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

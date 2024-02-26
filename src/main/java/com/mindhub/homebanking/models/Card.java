@@ -3,7 +3,6 @@ package com.mindhub.homebanking.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Card {
@@ -57,8 +56,8 @@ public class Card {
         this.type = type;
     }
 
-    public CardColor getColor() {
-        return color;
+    public String getColor() {
+        return color.toString().toLowerCase();
     }
 
     public void setColor(CardColor color) {
