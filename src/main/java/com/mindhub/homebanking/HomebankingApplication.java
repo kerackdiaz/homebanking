@@ -27,8 +27,8 @@ public class HomebankingApplication {
 	public CommandLineRunner initData(ClientRepository clientRepository, AccountRepository accountRepository, LoanRepository loanRepository,TransactionRepository transactionRepository, ClientLoanRepository clientLoanRepository, CardRepository cardRepository){
 		return  args -> {
 			Client Melba = new Client("Melba", "Morel", "melba@mindhub.com", passwordEncoder.encode("123456"));
-			Account melba1 = new Account("VIN-001", LocalDate.now(), 5000.00);
-			Account melba2 = new Account("VIN-002", LocalDate.now(), 7500.00);
+			Account melba1 = new Account("VIN-00000001", LocalDate.now(), 5000.00);
+			Account melba2 = new Account("VIN-00000002", LocalDate.now(), 7500.00);
 
 			Loan mortgage = new Loan("Mortgage", 500000.0, Arrays.asList(12, 24, 36, 48, 60));
 			Loan personal = new Loan("Personal", 100000.0, Arrays.asList(6, 12, 24));
@@ -37,8 +37,8 @@ public class HomebankingApplication {
 			ClientLoan mortgage1 = new ClientLoan(400000,60 );
 			ClientLoan personal1 = new ClientLoan(50000,12 );
 			Card melbaCard1 = new Card(CardType.DEBIT, CardColor.GOLD, 3325674578764445L, 990, LocalDate.now(), LocalDate.now().plusYears(5));
-			Card melbaCard2 = new Card(CardType.CREDIT, CardColor.TITANIUM, 3325674578764952L, 123, LocalDate.now(), LocalDate.now().plusYears(5));
-			Card melbaCard3 = new Card(CardType.DEBIT, CardColor.SILVER, 3329090578764952L, 456, LocalDate.now(), LocalDate.now().plusYears(5));
+
+
 
 			Transaction transaction1 = new Transaction(TransactionType.DEBIT, "NonProfit LiveStream", LocalDateTime.now(), -30021);
 			Transaction transaction2 = new Transaction(TransactionType.DEBIT, "Sockets Buy",LocalDateTime.now(), -300);
@@ -49,10 +49,7 @@ public class HomebankingApplication {
 
 			melbaCard1.setClient(Melba);
 			melbaCard1.setCardHolder(Melba);
-			melbaCard2.setClient(Melba);
-			melbaCard2.setCardHolder(Melba);
-			melbaCard3.setClient(Melba);
-			melbaCard3.setCardHolder(Melba);
+
 			Melba.addAccount(melba1);
 			Melba.addAccount(melba2);
 			mortgage1.setClient(Melba);
@@ -81,8 +78,7 @@ public class HomebankingApplication {
 			clientLoanRepository.save(mortgage1);
 			clientLoanRepository.save(personal1);
 			cardRepository.save(melbaCard1);
-			cardRepository.save(melbaCard2);
-			cardRepository.save(melbaCard3);
+
 			System.out.println(Melba);
 		};
 	}

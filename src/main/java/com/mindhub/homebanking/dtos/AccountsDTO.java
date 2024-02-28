@@ -13,6 +13,7 @@ public class AccountsDTO {
 
     private List<Transaction> transactionList;
 
+
     public AccountsDTO(Account account) {
         this.id = account.getId();
         this.number = account.getNumber();
