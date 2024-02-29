@@ -76,6 +76,7 @@ public class AuthController {
                 return new ResponseEntity<>("Email already in use", HttpStatus.BAD_REQUEST);
             }
 
+
             Client client = new Client(registerDTO.firstName(), registerDTO.lastName(), registerDTO.email(), passwordEncoder.encode(registerDTO.password()));
 
             clientRepository.save(client);
