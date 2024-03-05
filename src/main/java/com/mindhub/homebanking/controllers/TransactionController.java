@@ -9,6 +9,7 @@ import com.mindhub.homebanking.repositories.AccountRepository;
 import com.mindhub.homebanking.repositories.ClientRepository;
 import com.mindhub.homebanking.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,14 +30,14 @@ public class TransactionController {
     @Autowired
     TransactionRepository transactionRepository;
 
-    @PostMapping("/transfer")
-    public ResponseEntity<?> transfer(@RequestBody TransferDTO transferDTO) {
+@PostMapping("/transfer")
+public ResponseEntity<?> transfer(@RequestBody TransferDTO transferDTO) {
+    try {
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
         Client clientOrigin = clientRepository.findByEmail(userMail);
         Client clientDestination = clientRepository.findByAccountsNumber(transferDTO.accountDestination());
         Account origin = accountRepository.findByNumber(transferDTO.accountOrigin());
         Account destination = accountRepository.findByNumber(transferDTO.accountDestination());
-
 
         if (!clientOrigin.getAccounts().stream().anyMatch(a -> a.getNumber().equals(transferDTO.accountOrigin()))) {
             return ResponseEntity.badRequest().body("account not found");
@@ -50,7 +51,6 @@ public class TransactionController {
         }
         if (origin.getBalance() < transferDTO.amount()) {
             return ResponseEntity.badRequest().body("insufficient funds");
-
         }
         origin.setBalance(origin.getBalance() - transferDTO.amount());
         destination.setBalance(destination.getBalance() + transferDTO.amount());
@@ -69,8 +69,10 @@ public class TransactionController {
         transactionRepository.save(transactionDestination);
 
         return ResponseEntity.ok("success");
-
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
     }
+}
 
     @GetMapping("/reception")
     public void reception() {
