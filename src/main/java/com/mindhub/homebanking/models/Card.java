@@ -15,12 +15,13 @@ public class Card {
     private CardType type;
     @Enumerated(EnumType.STRING)
     private CardColor color;
+    @Column(unique=true)
     private Long number;
     private int cvv;
     private LocalDate fromDate;
     private LocalDate thruDate;
     @ManyToOne
-    @JoinColumn(name = "clinet_id")
+    @JoinColumn(name = "client_id")
     private Client client;
 
 

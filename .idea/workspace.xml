@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9db2fc30-5e4e-4548-b46b-0e8dfc2cd322" name="Changes" comment="sprint_9">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,17 +13,33 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_h2database_h2_2_2_224.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/HomebankingApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/HomebankingApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/CardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/CardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/ClientController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/LoansController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/LoansController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/TransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/controllers/TransactionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/repositories/LoanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/repositories/LoanRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/models/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/models/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/models/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/models/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/repositories/CardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/repositories/CardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resolvedMainClassName" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CorsConfig.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/HomebankingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/HomebankingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/LoansController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/controllers/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/repositories/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/repositories/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/repositories/TransactionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mindhub/homebanking/HomebankingApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +81,12 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="homebanking" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -80,8 +99,8 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,12 +131,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.AccountServiceTest.executor": "Debug",
+    "Gradle.AccountServiceTest.testGetAllAccounts.executor": "Run",
+    "Gradle.AuthServiceTest.executor": "Run",
+    "Gradle.AuthServiceTest.testLogin.executor": "Debug",
+    "Gradle.AuthServiceTest.testRegister.executor": "Debug",
     "Gradle.Build homebanking.executor": "Run",
+    "Gradle.CardServiceTest.executor": "Run",
+    "Gradle.CardServiceTest.testGetCards.executor": "Run",
+    "Gradle.HomebankingApplicationTest.executor": "Run",
+    "Gradle.HomebankingApplicationTests.contextLoads.executor": "Run",
+    "Gradle.HomebankingApplicationTests.executor": "Debug",
+    "Gradle.RepositoriesTest.executor": "Run",
+    "Gradle.RepositoriesTest.testAccountGetByNumber.executor": "Run",
+    "Gradle.RepositoriesTest.testCardCount.executor": "Run",
+    "Gradle.RepositoriesTest.testClientHasMaxOneBlackCard.executor": "Run",
+    "Gradle.RepositoriesTest.testTransfer.executor": "Run",
+    "Gradle.RespositoriosTest.loginTest.executor": "Run",
+    "Gradle.homebanking [:HomebankingApplication.main()].executor": "Run",
     "Gradle.homebanking [:Main.main()].executor": "Run",
     "Gradle.homebanking [bootRun].executor": "Run",
     "Gradle.homebanking [build].executor": "Run",
     "Gradle.homebanking [clean].executor": "Run",
     "Gradle.homebanking [jar].executor": "Run",
+    "Gradle.homebanking [test].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "sprint__11",
@@ -128,102 +169,134 @@
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.homebanking [bootRun]">
-    <configuration name="homebanking [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.HomebankingApplicationTest">
+    <configuration name="HomebankingApplicationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--scan" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="bootRun" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.mindhub.homebanking.HomebankingApplicationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="homebanking [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RepositoriesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--scan" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.mindhub.homebanking.RepositoriesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="homebanking [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RepositoriesTest.testAccountGetByNumber" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.mindhub.homebanking.RepositoriesTest.testAccountGetByNumber&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="homebanking [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RepositoriesTest.testCardCount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.mindhub.homebanking.RepositoriesTest.testCardCount&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RepositoriesTest.testTransfer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.mindhub.homebanking.RepositoriesTest.testTransfer&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.homebanking [jar]" />
-        <item itemvalue="Gradle.homebanking [clean]" />
-        <item itemvalue="Gradle.homebanking [build]" />
-        <item itemvalue="Gradle.homebanking [bootRun]" />
-        <item itemvalue="Gradle.homebanking [jar]" />
+        <item itemvalue="Gradle.HomebankingApplicationTest" />
+        <item itemvalue="Gradle.RepositoriesTest.testTransfer" />
+        <item itemvalue="Gradle.RepositoriesTest" />
+        <item itemvalue="Gradle.RepositoriesTest.testCardCount" />
+        <item itemvalue="Gradle.RepositoriesTest.testAccountGetByNumber" />
       </list>
     </recent_temporary>
   </component>
