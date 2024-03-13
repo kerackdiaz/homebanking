@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9db2fc30-5e4e-4548-b46b-0e8dfc2cd322" name="Changes" comment="sprint_9">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/HomebankingApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/mindhub/homebanking/HomebankingApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/mindhub/homebanking/HomebankingApplicationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/mindhub/homebanking/RepositoriesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.mindhub.homebanking.HomebankingApplicationTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.mindhub.homebanking.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.mindhub.homebanking.HomebankingApplicationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/HomebankingApplication.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/HomebankingApplicationTest.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/HomebankingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/HomebankingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mindhub/homebanking/HomebankingApplicationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mindhub/homebanking/RepositoriesTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,47 +98,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.AccountServiceTest.executor": "Debug",
-    "Gradle.AccountServiceTest.testGetAllAccounts.executor": "Run",
-    "Gradle.AuthServiceTest.executor": "Run",
-    "Gradle.AuthServiceTest.testLogin.executor": "Debug",
-    "Gradle.AuthServiceTest.testRegister.executor": "Debug",
-    "Gradle.Build homebanking.executor": "Run",
-    "Gradle.CardServiceTest.executor": "Run",
-    "Gradle.CardServiceTest.testGetCards.executor": "Run",
-    "Gradle.HomebankingApplicationTest.executor": "Run",
-    "Gradle.HomebankingApplicationTests.contextLoads.executor": "Run",
-    "Gradle.HomebankingApplicationTests.executor": "Debug",
-    "Gradle.RepositoriesTest.executor": "Run",
-    "Gradle.RepositoriesTest.testAccountGetByNumber.executor": "Run",
-    "Gradle.RepositoriesTest.testCardCount.executor": "Run",
-    "Gradle.RepositoriesTest.testClientHasMaxOneBlackCard.executor": "Run",
-    "Gradle.RepositoriesTest.testTransfer.executor": "Run",
-    "Gradle.RespositoriosTest.loginTest.executor": "Run",
-    "Gradle.homebanking [:HomebankingApplication.main()].executor": "Run",
-    "Gradle.homebanking [:Main.main()].executor": "Run",
-    "Gradle.homebanking [bootRun].executor": "Run",
-    "Gradle.homebanking [build].executor": "Run",
-    "Gradle.homebanking [clean].executor": "Run",
-    "Gradle.homebanking [jar].executor": "Run",
-    "Gradle.homebanking [test].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "deploy",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kerac/OneDrive/Documentos/Minhub/Modulo 3/OnBoarding-Java",
-    "onboarding.tips.debug.path": "C:/Users/kerac/OneDrive/Documentos/Minhub/Modulo 3/homebanking/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.AccountServiceTest.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.AccountServiceTest.testGetAllAccounts.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthServiceTest.testLogin.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.AuthServiceTest.testRegister.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Build homebanking.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CardServiceTest.testGetCards.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HomebankingApplicationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HomebankingApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.HomebankingApplicationTests.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.RepositoriesTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RepositoriesTest.testAccountGetByNumber.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RepositoriesTest.testCardCount.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RepositoriesTest.testClientHasMaxOneBlackCard.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RepositoriesTest.testTransfer.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RespositoriosTest.loginTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [:HomebankingApplication.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [bootRun].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.homebanking [test].executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;deploy&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kerac/OneDrive/Documentos/Minhub/Modulo 3/OnBoarding-Java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/kerac/OneDrive/Documentos/Minhub/Modulo 3/homebanking/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.homebanking [build]">
+}</component>
+  <component name="RunManager" selected="Gradle.homebanking [clean]">
     <configuration name="HomebankingApplicationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -281,9 +255,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.homebanking [build]" />
-        <item itemvalue="Gradle.homebanking [bootRun]" />
         <item itemvalue="Gradle.homebanking [clean]" />
+        <item itemvalue="Gradle.homebanking [bootRun]" />
+        <item itemvalue="Gradle.homebanking [build]" />
         <item itemvalue="Gradle.HomebankingApplicationTest" />
         <item itemvalue="Gradle.RepositoriesTest.testTransfer" />
       </list>
