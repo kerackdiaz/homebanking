@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
@@ -18,6 +19,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
+    @Transactional
     @PostMapping("/current/apply")
     public ResponseEntity<?> createCard(@RequestBody CardFormDTO cardForm){
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
