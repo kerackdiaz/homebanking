@@ -29,7 +29,7 @@ public class ClientDTO {
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
-        this.profilePictureUrl = client.getImage() != null ? client.getImage() : "http://localhost:5173/public/pp-ulver-bank.jpg";
+        this.profilePictureUrl = client.getImage() != null ? client.getImage() : "https://homebanking-front.onrender.com/public/pp-ulver-bank.jpg";
         this.accounts = accountsDTO(client.getAccounts());
         this.transactions= transactionDTOS(client.getTransactions());
         this.loans = clientLoanDTO(client.getLoans());
