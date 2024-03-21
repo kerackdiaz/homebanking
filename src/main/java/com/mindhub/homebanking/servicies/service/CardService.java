@@ -45,7 +45,6 @@ public class CardService {
             return response;
         }
 
-        // Verificar si el usuario ya tiene una tarjeta del mismo color
         if (client.getCard().stream().anyMatch(card -> card.getColor().equals(CardColor.valueOf(cardForm.cardColor())))) {
             response.put("success", false);
             response.put("message", "You already have a card of this color");
@@ -64,6 +63,8 @@ public class CardService {
         response.put("message", "Card created successfully");
         return response;
     }
+
+
 
     public List<Card> getCards(String userMail) {
         Client client = clientRepository.findByEmail(userMail);

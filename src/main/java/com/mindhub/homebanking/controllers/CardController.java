@@ -18,7 +18,7 @@ public class CardController {
     @Autowired
     private CardService cardService;
 
-    @PostMapping("/current/cards")
+    @PostMapping("/current/apply")
     public ResponseEntity<?> createCard(@RequestBody CardFormDTO cardForm){
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
         return new ResponseEntity<>(cardService.createCard(cardForm, userMail), HttpStatus.OK);
