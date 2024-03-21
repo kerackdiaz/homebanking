@@ -29,22 +29,22 @@ public class CardService {
         Map<String, Object> response = new HashMap<>();
         Client client = clientRepository.findByEmail(userMail);
         Long cardNumber = RandomUtil.generateNumber(16);
-        int cardCVV = RandomUtil.generateNumber(3).intValue();
+        int cardCVV = (int)RandomUtil.generateNumber(3);
         Long cardCount = cardRepository.countByClientId(client.getId());
-
         if (cardCount >= 3 ) {
             response.put("success", false);
             response.put("message", "You already have 3 cards");
             return response;
         }
 
-        if (cardRepository.existsByType(CardType.valueOf(cardForm.cardType()))) {
+        if (client.getCard().stream().anyMatch(card -> card.getType().equals(CardType.valueOf(cardForm.cardType())))) {
             response.put("success", false);
             response.put("message", "You already have a card of this type");
             return response;
         }
 
-        if (cardRepository.existsByColor(CardColor.valueOf(cardForm.cardColor()))) {
+        // Verificar si el usuario ya tiene una tarjeta del mismo color
+        if (client.getCard().stream().anyMatch(card -> card.getColor().equals(CardColor.valueOf(cardForm.cardColor())))) {
             response.put("success", false);
             response.put("message", "You already have a card of this color");
             return response;
@@ -66,5 +66,13 @@ public class CardService {
     public List<Card> getCards(String userMail) {
         Client client = clientRepository.findByEmail(userMail);
         return client.getCard();
+    }
+
+    public void deleteCard(Long id, String userMail) {
+        Client client = clientRepository.findByEmail(userMail);
+        Card card = cardRepository.findById(id).orElse(null);
+        if (card != null) {
+            cardRepository.delete(card);
+        }
     }
 }

@@ -18,6 +18,8 @@ public class Client {
 
     private String password;
 
+    private String image;
+
 
     @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<Account> accounts;
@@ -72,6 +74,14 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public List<Account> getAccounts() {

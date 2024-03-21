@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class LoanService {
@@ -31,42 +33,54 @@ public class LoanService {
         return loanRepository.findAll();
     }
 
-    public Loan createLoan(LoanRequestDTO loanRequestDTO, String userMail) throws Exception {
+    public Map<String, Object> createLoan(LoanRequestDTO loanRequestDTO, String userMail) {
+        Map<String, Object> response = new HashMap<>();
         try {
             Loan loanName = loanRepository.findByName(loanRequestDTO.name());
             Client client = clientRepository.findByEmail(userMail);
             Account destinationAccount = accountRepository.findByNumber(loanRequestDTO.accountDestination());
             double totalAmount = loanRequestDTO.amount() * 1.20;
+
+
             if (loanRequestDTO.amount() <= 0 || loanRequestDTO.payments() <= 0) {
-                return null;
+                response.put("error", false);
+                response.put("message", "Amount and payments must be greater than 0");
+                return response;
             }
+
             if (loanName == null || loanRequestDTO.amount() > loanName.getMaxAmount() || !loanName.getPayments().contains(loanRequestDTO.payments())) {
-                return null;
+                response.put("error", false);
+                response.put("message", "Invalid loan request");
+                return response;
             }
+
             if (destinationAccount == null || !destinationAccount.getClient().equals(client)) {
-                return null;
+                response.put("error", false);
+                response.put("message", "Invalid destination account");
+                return response;
             }
 
-            Loan newLoan = new Loan(loanRequestDTO.name(), totalAmount, List.of(loanRequestDTO.payments()));
-            loanRepository.save(newLoan);
 
-            ClientLoan clientLoan = new ClientLoan(loanRequestDTO.amount(), loanRequestDTO.payments());
-            clientLoan.setClient(client);
-            clientLoan.setLoan(newLoan);
-            clientLoanRepository.save(clientLoan);
+            ClientLoan newLoan = new ClientLoan(totalAmount, loanRequestDTO.payments());
+            newLoan.setClient(client);
+            newLoan.setLoan(loanName);
+            clientLoanRepository.save(newLoan);
 
-            Transaction transaction1 = new Transaction(TransactionType.CREDIT, "Loan " + loanRequestDTO.name() + " approved", LocalDateTime.now(), totalAmount);
+            Transaction transaction1 = new Transaction(TransactionType.CREDIT, "Loan " + loanRequestDTO.name() + " approved", LocalDateTime.now(), loanRequestDTO.amount());
+            transaction1.setAccount(destinationAccount);
+            transaction1.setClient(client);
             transactionRepository.save(transaction1);
-            destinationAccount.addTransaction(transaction1);
-            destinationAccount.setBalance(destinationAccount.getBalance() + totalAmount);
 
+            destinationAccount.setBalance(destinationAccount.getBalance() + loanRequestDTO.amount());
             accountRepository.save(destinationAccount);
-            client.addAccount(destinationAccount);
-            clientRepository.save(client);
 
-            return newLoan;
+            response.put("success", true);
+            response.put("message", "Loan successfully created");
+            return response;
         } catch (Exception e) {
-            throw new Exception("An error occurred: " + e.getMessage());
+            response.put("error", false);
+            response.put("message", "An error occurred: " + e.getMessage());
+            return response;
         }
     }
 }

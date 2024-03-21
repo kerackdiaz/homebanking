@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class TransactionService {
@@ -20,7 +22,8 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    public String transfer(TransferDTO transferDTO, String userMail) {
+    public Map<String, Object> transfer(TransferDTO transferDTO, String userMail) {
+        Map<String, Object> response = new HashMap<>();
         try {
             Client clientOrigin = clientRepository.findByEmail(userMail);
             Client clientDestination = clientRepository.findByAccountsNumber(transferDTO.accountDestination());
@@ -28,47 +31,64 @@ public class TransactionService {
             Account destination = accountRepository.findByNumber(transferDTO.accountDestination());
 
             if (!clientOrigin.getAccounts().stream().anyMatch(a -> a.getNumber().equals(transferDTO.accountOrigin()))) {
-                return "account not found";
+                response.put("error", false);
+                response.put("message", "account not found");
+                return response;
             }
 
             if (transferDTO.accountOrigin().equals(transferDTO.accountDestination())) {
-                return "select another account";
+                response.put("error", false);
+                response.put("message", "select another account");
+                return response;
             }
 
             if (!accountRepository.existsByNumber(transferDTO.accountDestination())) {
-                return "account not found";
+                response.put("error", false);
+                response.put("message", "account not found");
+                return response;
             }
 
             if (transferDTO.amount() <= 0) {
-                return "transfer amount must be positive";
+                response.put("error", false);
+                response.put("message", "transfer amount must be positive");
+                return response;
             }
 
             if (!origin.getClient().equals(clientOrigin)) {
-                return "unauthorized transfer";
+                response.put("error", false);
+                response.put("message", "unauthorized transfer");
+                return response;
             }
 
             if (origin.getBalance() < transferDTO.amount()) {
-                return "insufficient funds";
+                response.put("error", false);
+                response.put("message", "insufficient funds");
+                return response;
             }
+
             origin.setBalance(origin.getBalance() - transferDTO.amount());
             destination.setBalance(destination.getBalance() + transferDTO.amount());
 
             accountRepository.save(origin);
             accountRepository.save(destination);
 
-            Transaction transactionOrigin = new Transaction(TransactionType.DEBIT, transferDTO.description(), LocalDateTime.now(), -transferDTO.amount());
+            Transaction transactionOrigin = new Transaction(TransactionType.DEBIT, "transfer to " +transferDTO.accountDestination(), LocalDateTime.now(), -transferDTO.amount());
             transactionOrigin.setAccount(origin);
             transactionOrigin.setClient(clientOrigin);
             transactionRepository.save(transactionOrigin);
 
-            Transaction transactionDestination = new Transaction(TransactionType.CREDIT, transferDTO.description(), LocalDateTime.now(), transferDTO.amount());
+            Transaction transactionDestination = new Transaction(TransactionType.CREDIT, "transfer from " +transferDTO.accountOrigin(), LocalDateTime.now(), transferDTO.amount());
             transactionDestination.setAccount(destination);
             transactionDestination.setClient(clientDestination);
             transactionRepository.save(transactionDestination);
 
-            return "success";
+            response.put("success", true);
+            response.put("message", "Successfully transferred");
+            return response;
         } catch (Exception e) {
-            return "An error occurred: " + e.getMessage();
+            response.put("error", false);
+            response.put("message", "An error occurred: " + e.getMessage());
+            return response;
         }
     }
 }

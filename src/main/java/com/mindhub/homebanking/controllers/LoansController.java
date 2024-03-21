@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -34,11 +35,12 @@ public class LoansController {
     @PostMapping("/request")
     public ResponseEntity<?> createLoan(@RequestBody LoanRequestDTO loanRequestDTO) throws Exception {
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
-        Loan newLoan = loanService.createLoan(loanRequestDTO, userMail);
-        if (newLoan == null) {
-            return new ResponseEntity<>("Error creating loan", HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>(new LoanDTO(newLoan), HttpStatus.CREATED);
+        return new ResponseEntity<>(loanService.createLoan(loanRequestDTO, userMail), HttpStatus.CREATED);
+//        if (newLoan.get("success").equals(false)) {
+//
+//            return new ResponseEntity<>(newLoan.get("message"), HttpStatus.BAD_REQUEST);
+//        }
+//        return new ResponseEntity<>(newLoan, HttpStatus.CREATED);
     }
 }
 

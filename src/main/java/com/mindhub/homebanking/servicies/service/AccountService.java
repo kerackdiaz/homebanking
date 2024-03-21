@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AccountService {
@@ -28,12 +30,15 @@ public class AccountService {
         return accountRepository.findById(id).orElse(null);
     }
 
-    public String createAccount(String userMail) {
+    public Map<String, Object> createAccount(String userMail) {
+        Map<String, Object> response = new HashMap<>();
         String accountNumber = RandomUtil.generateAccountNumber(8);
         Client client = clientRepository.findByEmail(userMail);
 
         if (client.getAccounts().size() >= 3) {
-            return "Already has 3 accounts";
+            response.put("error", true);
+            response.put("message", "Already has 3 accounts");
+            return response;
         }
 
         while (accountRepository.existsByNumber(accountNumber)) {
@@ -44,7 +49,9 @@ public class AccountService {
         newAccount.setClient(client);
         accountRepository.save(newAccount);
 
-        return "Account created successfully!";
+        response.put("success", true);
+        response.put("message", "Account created successfully!");
+        return response;
     }
 
     public List<Account> getAccounts(String userMail) {

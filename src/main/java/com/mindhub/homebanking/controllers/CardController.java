@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 @RestController
@@ -29,5 +28,13 @@ public class CardController {
     public ResponseEntity<?> getCards(){
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
         return ResponseEntity.ok(cardService.getCards(userMail).stream().map(CardDTO::new).collect(Collectors.toList()));
+    }
+
+
+    @DeleteMapping("/current/cards/{id}")
+    public ResponseEntity<?> deleteCard(@PathVariable Long id){
+        String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
+        cardService.deleteCard(id, userMail);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

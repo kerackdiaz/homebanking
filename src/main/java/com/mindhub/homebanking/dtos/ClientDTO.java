@@ -13,6 +13,8 @@ public class ClientDTO {
     private String firstName;
     private String lastName;
     private String email;
+
+    private String profilePictureUrl;
     private List<AccountsDTO> accounts;
 
     private List<TransactionDTO> transactions;
@@ -27,6 +29,7 @@ public class ClientDTO {
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
+        this.profilePictureUrl = client.getImage() != null ? client.getImage() : "http://localhost:5173/public/pp-ulver-bank.jpg";
         this.accounts = accountsDTO(client.getAccounts());
         this.transactions= transactionDTOS(client.getTransactions());
         this.loans = clientLoanDTO(client.getLoans());
@@ -63,6 +66,11 @@ public class ClientDTO {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getProfilePictureUrl() {
+
+        return this.profilePictureUrl;
     }
 
     public List<AccountsDTO> getAccounts() {

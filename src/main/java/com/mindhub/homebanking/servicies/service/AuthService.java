@@ -46,19 +46,36 @@ public class AuthService {
 
     public Map<String, Object> login(LoginDTO loginDTO) {
         Map<String, Object> response = new HashMap<>();
-        if(loginDTO.email().isBlank() || loginDTO.password().isBlank()){
-            response.put("success", false);
-            response.put("message", "Incorrect");
+        if(loginDTO.email().isBlank() ){
+            response.put("error", false);
+            response.put("message", "the email are empty");
+            return response;
+        }
+        if( loginDTO.password().isBlank()){
+            response.put("error", false);
+            response.put("message", "the password are empty");
+            return response;
+        }
+        if (!clientRepository.existsByEmail(loginDTO.email())) {
+            response.put("error", false);
+            response.put("message", "User not found");
+            return response;
+        }
+        Client client = clientRepository.findByEmail(loginDTO.email());
+        if (!passwordEncoder.matches(loginDTO.password(), client.getPassword())) {
+            response.put("error", false);
+            response.put("message", "Incorrect password");
             return response;
         }
         try{
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.email(), loginDTO.password()));
             final UserDetails userDetails = userDetailsService.loadUserByUsername(loginDTO.email());
             final String jwt = jwtUtilService.generateToken(userDetails);
+
             response.put("success", true);
             response.put("token", jwt);
         }catch(Exception e){
-            response.put("success", false);
+            response.put("error", false);
             response.put("message", "Incorrect");
         }
         return response;
@@ -67,9 +84,52 @@ public class AuthService {
     public Map<String, Object> register(RegisterDTO registerDTO) {
         Map<String, Object> response = new HashMap<>();
         try {
+
+            if (registerDTO.firstName().isBlank()) {
+                response.put("error", false);
+                response.put("message", "First name cannot be blank");
+                return response;
+            }
+            if ( registerDTO.lastName().isBlank()) {
+                response.put("error", false);
+                response.put("message", "Last name cannot be blank");
+                return response;
+            }
+            if (registerDTO.email().isBlank()) {
+                response.put("error", false);
+                response.put("message", "Email cannot be blank");
+                return response;
+            }
             if (clientRepository.existsByEmail(registerDTO.email())) {
                 response.put("success", false);
-//                response.put("message", "Email already in use");
+                response.put("message", "Email already in use");
+                return response;
+            }
+            if (registerDTO.password().isBlank()) {
+                response.put("error", false);
+                response.put("message", "Password cannot be blank");
+                return response;
+            }
+
+            if (registerDTO.password().length() < 8) {
+                response.put("error", false);
+                response.put("message", "Password must be at least 8 characters long");
+                return response;
+            }
+            if (!registerDTO.password().matches(".*\\d.*")) {
+                response.put("error", false);
+                response.put("message", "Password must contain at least one number");
+                return response;
+            }
+            if (!registerDTO.password().matches(".*[a-z].*")) {
+                response.put("error", false);
+                response.put("message", "Password must contain at least one lowercase letter");
+                return response;
+            }
+
+            if (!registerDTO.password().matches(".*[A-Z].*")) {
+                response.put("error", false);
+                response.put("message", "Password must contain at least one uppercase letter");
                 return response;
             }
 
