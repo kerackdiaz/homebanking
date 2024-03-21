@@ -10,11 +10,13 @@ import com.mindhub.homebanking.repositories.ClientRepository;
 import com.mindhub.homebanking.utilitis.RandomUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class CardService {
@@ -68,11 +70,17 @@ public class CardService {
         return client.getCard();
     }
 
-    public void deleteCard(Long id, String userMail) {
+    @Transactional
+    public Map<String, Object> deleteCard(Long id, String userMail) {
         Client client = clientRepository.findByEmail(userMail);
-        Card card = cardRepository.findById(id).orElse(null);
-        if (card != null) {
-            cardRepository.delete(card);
+        if (client.getCard().stream().anyMatch(card -> card.getId() == id)  ) {
+            Card card = cardRepository.findById(id).get();
+                cardRepository.delete(card);
+
+            clientRepository.save(client);
+            return Map.of("success", true, "message", "Card deleted successfully");
         }
+
+        return Map.of("success", false, "message", "Card not found");
     }
 }

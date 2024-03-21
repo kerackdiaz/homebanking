@@ -34,7 +34,6 @@ public class CardController {
     @DeleteMapping("/current/cards/{id}")
     public ResponseEntity<?> deleteCard(@PathVariable Long id){
         String userMail = SecurityContextHolder.getContext().getAuthentication().getName();
-        cardService.deleteCard(id, userMail);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return new ResponseEntity<>(cardService.deleteCard(id, userMail), HttpStatus.OK);
     }
 }
