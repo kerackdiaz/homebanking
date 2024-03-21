@@ -30,7 +30,7 @@ public class CardService {
     public Map<String, Object> createCard(CardFormDTO cardForm, String userMail) {
         Map<String, Object> response = new HashMap<>();
         Client client = clientRepository.findByEmail(userMail);
-        Long cardNumber = RandomUtil.generateNumber(16);
+        long cardNumber = RandomUtil.generateNumber(16);
         int cardCVV = (int)RandomUtil.generateNumber(3);
         Long cardCount = cardRepository.countByClientId(client.getId());
         if (cardCount >= 3 ) {
