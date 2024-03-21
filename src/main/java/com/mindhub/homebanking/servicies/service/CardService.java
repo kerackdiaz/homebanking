@@ -57,7 +57,7 @@ public class CardService {
         newCard.setCardHolder(client);
 
         cardRepository.save(newCard);
-        clientRepository.save(client);
+//        clientRepository.save(client);
 
         response.put("success", true);
         response.put("message", "Card created successfully");
