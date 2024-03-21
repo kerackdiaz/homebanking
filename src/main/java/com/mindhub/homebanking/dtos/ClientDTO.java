@@ -29,7 +29,7 @@ public class ClientDTO {
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
-        this.profilePictureUrl = client.getImage() != null ? client.getImage() : "https://homebanking-front.onrender.com/public/pp-ulver-bank.jpg";
+        this.profilePictureUrl = client.getImage() != null ? client.getImage() : "https://firebasestorage.googleapis.com/v0/b/homebankingapp-4b70f.appspot.com/o/AssetsHomebanking%2Fpp-ulver-bank.jpg?alt=media&token=3ce9d213-9ef4-488f-845a-cdbeea119785";
         this.accounts = accountsDTO(client.getAccounts());
         this.transactions= transactionDTOS(client.getTransactions());
         this.loans = clientLoanDTO(client.getLoans());
