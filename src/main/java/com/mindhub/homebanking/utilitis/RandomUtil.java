@@ -14,8 +14,7 @@ public class RandomUtil {
             throw new IllegalArgumentException("Número de dígitos debe ser mayor que cero");
         }
 
-        long min = (long) Math.pow(10, numDigits - 1);
         long max = (long) Math.pow(10, numDigits) - 1;
-        return random.nextInt((int)(max - min + 1)) + (int) min;
+        return random.nextLong() % max + 1;
     }
 }
