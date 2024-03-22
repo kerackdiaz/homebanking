@@ -15,6 +15,6 @@ public class RandomUtil {
         }
 
         long max = (long) Math.pow(10, numDigits) - 1;
-        return random.nextLong() % max + 1;
+        return Math.abs(random.nextLong()) % max + 1;
     }
 }
