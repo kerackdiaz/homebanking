@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9db2fc30-5e4e-4548-b46b-0e8dfc2cd322" name="Changes" comment="sprint_9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/servicies/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mindhub/homebanking/servicies/service/CardService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
