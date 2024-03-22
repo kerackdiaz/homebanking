@@ -32,8 +32,8 @@ public class CardService {
     public Map<String, Object> createCard(CardFormDTO cardForm, String userMail) {
         Map<String, Object> response = new HashMap<>();
         Client client = clientRepository.findByEmail(userMail);
-        long cardNumber = RandomUtil.generateNumber(16);
-        long cardCVV = RandomUtil.generateNumber(3);
+//        long cardNumber = RandomUtil.generateNumber(16);
+//        long cardCVV = RandomUtil.generateNumber(3);
         Long cardCount = cardRepository.countByClientId(client.getId());
         if (cardCount >= 3) {
             response.put("success", false);
@@ -53,7 +53,7 @@ public class CardService {
             return response;
         }
 
-        Card newCard = new Card(CardType.valueOf(cardForm.cardType()), CardColor.valueOf(cardForm.cardColor()), cardNumber, (int) cardCVV, LocalDate.now(), LocalDate.now().plusYears(5));
+        Card newCard = new Card(CardType.valueOf(cardForm.cardType()), CardColor.valueOf(cardForm.cardColor()), 1111111111111111L,123, LocalDate.now(), LocalDate.now().plusYears(5));
 
         newCard.setClient(client);
         newCard.setCardHolder(client);
