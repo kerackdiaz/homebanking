@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 @Service
 public class CardService {
+
 
     @Autowired
     private CardRepository cardRepository;
@@ -33,7 +35,7 @@ public class CardService {
         long cardNumber = RandomUtil.generateNumber(16);
         long cardCVV = RandomUtil.generateNumber(3);
         Long cardCount = cardRepository.countByClientId(client.getId());
-        if (cardCount >= 3 ) {
+        if (cardCount >= 3) {
             response.put("success", false);
             response.put("message", "You already have 3 cards");
             return response;
@@ -57,7 +59,7 @@ public class CardService {
         newCard.setCardHolder(client);
 
         cardRepository.save(newCard);
-//        clientRepository.save(client);
+        clientRepository.save(client);
 
         response.put("success", true);
         response.put("message", "Card created successfully");
@@ -65,18 +67,20 @@ public class CardService {
     }
 
 
-
     public List<Card> getCards(String userMail) {
         Client client = clientRepository.findByEmail(userMail);
+        if (client == null) {
+            return null;
+        }
         return client.getCard();
     }
 
     @Transactional
     public Map<String, Object> deleteCard(Long id, String userMail) {
         Client client = clientRepository.findByEmail(userMail);
-        if (client.getCard().stream().anyMatch(card -> card.getId() == id)  ) {
+        if (client.getCard().stream().anyMatch(card -> card.getId() == id)) {
             Card card = cardRepository.findById(id).get();
-                cardRepository.delete(card);
+            cardRepository.delete(card);
 
             clientRepository.save(client);
             return Map.of("success", true, "message", "Card deleted successfully");

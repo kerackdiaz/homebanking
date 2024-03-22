@@ -25,6 +25,8 @@ dependencies {
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.12.5'
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 
+
+
 }
 
 tasks.named('test') {
